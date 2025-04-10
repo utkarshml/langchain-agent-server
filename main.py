@@ -142,6 +142,7 @@ def read_root():
 @app.post("/query")
 async def process_query(user_input: QueryRequest):
     try:
+        
         response = stream_graph_updates(user_input=user_input.query)
         return response
         
